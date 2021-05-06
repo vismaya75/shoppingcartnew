@@ -1,0 +1,47 @@
+
+<section class="cart_section">
+    <div class="container">
+        <h2>Cart</h2>
+        <div *ngIf="getCartDetails">
+  
+  <table>
+  <tr>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Sub Total</th>
+  </tr>
+  <tr *ngFor="let getCartDetail of getCartDetails ">
+    <td> <img src="{{getCartDetail.imageUrl}}" alt=""></td>
+    <td> <h5>₹ {{getCartDetail.price}}</h5></td>
+    <td>
+      <div class="content">
+        <button type="button" class="btn" (click)="inc(getCartDetail.id,getCartDetail.qty)"> <i class="fa fa-plus" ></i></button>
+        <span>{{getCartDetail.qty}}</span>
+        <button type="button" class="btn" (click)="dec(getCartDetail.id,getCartDetail.qty)"><i class="fa fa-minus"></i></button>
+  
+      </div>
+    </td>
+    <td><h5>₹ {{getCartDetail.qty * getCartDetail.price}}</h5></td>
+    
+  </tr>
+  
+  </table>
+  <br>
+   <div class="list-group-item active">
+    <strong>Total = {{Total}}</strong>
+  </div> 
+  <br>
+  <div class="col-md-6 text-right">
+    <button type="button btn-block" class="removeall" (click)="removeall()"><i class="fa fa-trash"></i>Remove All Items</button>
+  </div>
+  </div>
+  
+  
+  
+  
+    </div>
+  </section>
+  
+  
+  

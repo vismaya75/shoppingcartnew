@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4" >
+        <div class="header text-center">
+            <h2>Register</h2>
+        </div>
+        <div class="jumbotron">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="form-group">
+                <label for="email">Username</label>
+                <input id="username" type="text" formControlName="username" name="username" class="form-control">
+                <div *ngIf="(this.registerForm.get('username')?.touched||this.registerForm.get('username')?.dirty)&& this.registerForm.get('username')?.errors" class="errors">Userame can't be blank</div>
+
+            </div>
+        
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" formControlName="email" name="email" class="form-control">
+                <div *ngIf="(this.registerForm.get('email')?.touched||this.registerForm.get('email')?.dirty)&& this.registerForm.get('email')?.errors" class="errors">Email not valid</div>
+
+            </div>
+        
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="pswd" type="password" formControlName="pswd" name="pswd" class="form-control">
+                <div *ngIf="(this.registerForm.get('pswd')?.touched||this.registerForm.get('pswd')?.dirty)&& this.registerForm.get('pswd')?.errors" class="errors">Password can't be blank</div>
+
+            </div>
+            <!-- <div class="form-group">
+                <label for="password">ConfirmPassword</label>
+                <input id="confirmPassword" type="password" formControlName="confirmPassword" name="confirmPassword" class="form-control">
+                <div *ngIf="(this.registerForm.get('confirmPassword')?.touched||this.registerForm.get('confirmPassword')?.dirty)&& this.registerForm.get('confirmPassword')?.errors" class="errors">Password must Match</div>
+
+            </div> -->
+        
+            <button  type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+        </form>
+    </div>
+
+    </div>
+</div>

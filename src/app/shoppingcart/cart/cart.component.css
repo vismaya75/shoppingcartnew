@@ -1,0 +1,33 @@
+.cart_section{
+    padding: 40px;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+   .btn{
+    background-color:cornflowerblue;
+    border-radius: 50%;
+    font-size: 16px;
+  } 
+  
+  .container{
+    padding-right: 3px;
+  }
+  button{
+    color:white;
+    background-color: red;
+  
+  }
+  
