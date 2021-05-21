@@ -20,13 +20,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getAccountnumber(event: any) {
+  getemail(event: any) {
     this.email = event.target.value;
-    //console.log(this.accno); 
+   
   }
   pswdchange(event: any) {
     this.pswd = event.target.value;
-    // console.log(this.pswd);
+    
 
   }
   login(){

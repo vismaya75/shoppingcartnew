@@ -1,5 +1,5 @@
 export class Product {
-    id: number;
+    pid: number;
     name: string;
     describtion: string;
     price: number;
@@ -7,8 +7,8 @@ export class Product {
     qty:number
     
 
-    constructor(id=0, name='', describtion="", price=0, imageUrl="../../../../assets/p2.jpeg",qty=1 ) {
-     this.id=id
+    constructor(pid=0, name='', describtion="", price=0, imageUrl="../../../../assets/p2.jpeg",qty=1 ) {
+     this.pid=pid
      this.name=name
      this.describtion=describtion
      this.price=price

@@ -9,11 +9,11 @@ import {Product } from '../../models/product'
 })
 export class ProductlistComponent implements OnInit {
   
-  prod:Product[]=[]
+  prods:Product[]=[]
   constructor(private productSerivce:ProductService ) { }
 
   ngOnInit():void {
-  this.prod= this.productSerivce.getproducts()
+  this.prods= this.productSerivce.getproducts()
     
   }
   

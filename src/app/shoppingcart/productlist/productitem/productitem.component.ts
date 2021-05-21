@@ -20,18 +20,18 @@ export class ProductitemComponent implements OnInit {
    handleAddToCart(_product:any){
     
      console.log(_product);
-     let cartDataNull=localStorage.getItem('localCart');
-     if(cartDataNull==null){
+     let cartData=localStorage.getItem('localCart');
+     if(cartData==null){
        let storeData:any=[];
        storeData.push(_product);
        localStorage.setItem('localCart',JSON.stringify(storeData))
      }
      else{
-       var id=_product.id;
-       let index:number=-1;
+       var id=_product.pid;
+       let index:number=-1; // condition not match return -1(if id is not match)
        this.itemsCart=JSON.parse(localStorage.getItem('localCart')||'');
        for(let i=0;i<this.itemsCart.length;i++){
-         if(parseInt(id)===parseInt(this.itemsCart[i].id)){
+         if(parseInt(id) === parseInt(this.itemsCart[i].pid)){
            this.itemsCart[i].qty=_product.qty;
            index=i;
            break;
@@ -47,8 +47,6 @@ export class ProductitemComponent implements OnInit {
        }
      }
     // localStorage.setItem('localCart',JSON.stringify(_product));
-     
-
    }
 
 }
